@@ -19,7 +19,8 @@ public class SayfaVeriGirisi {
         Thread.sleep(2000);
     }
     @After
-    public void programclose() { driver.close();}
+    public void programclose() { //driver.close();
+    }
 
     @Test
     public void linkTesti() throws InterruptedException {
@@ -30,6 +31,7 @@ public class SayfaVeriGirisi {
         Thread.sleep(1000);
         driver.findElement(By.id("tdb1")).click();
         Thread.sleep(1000);
+
         driver.findElement(By.id("ui-accordion-adminAppMenu-header-2")).click();
         Thread.sleep(1000);
         driver.findElement(By.id("ui-accordion-adminAppMenu-panel-2")).click();
@@ -39,24 +41,48 @@ public class SayfaVeriGirisi {
         driver.findElement(By.name("customers_firstname")).clear();
         driver.findElement(By.name("customers_firstname")).sendKeys("Yasar");
         Thread.sleep(1000);
+        driver.findElement(By.name("customers_lastname")).clear();
         driver.findElement(By.name("customers_lastname")).sendKeys("Yilmaz");
         Thread.sleep(2000);
         driver.findElement(By.name("customers_dob")).sendKeys("11/12/1975");
         Thread.sleep(2000);
+        driver.findElement(By.name("customers_email_address")).clear();
         driver.findElement(By.name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
         Thread.sleep(2000);
         driver.findElement(By.name("entry_company")).sendKeys("yas.yil company");
         Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@name='entry_street_address']")).clear();
         driver.findElement(By.xpath("//input[@name='entry_street_address']")).sendKeys("Sivas");   //name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//input[@name='customers_telephone']")).sendKeys("90980706050");     //name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        driver.findElement(By.xpath("//input[@name='customers_telephone']")).clear();
+        driver.findElement(By.xpath("//input[@name='customers_telephone']")).sendKeys("90980706050");
         Thread.sleep(2000);
-        driver.findElement(By.name("customers_fax")).sendKeys("9080706050");
+        driver.findElement(By.xpath("//input[@name='customers_fax']")).clear();
+        driver.findElement(By.xpath("//input[@name='customers_fax']")).sendKeys("10980702010");     //name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//select[@name='entry_country_id']")).findElements(By.partialLinkText("Turkey"));
         Thread.sleep(2000);
         driver.findElement(By.xpath("//select[@name='customers_newsletter']")).click();   //name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
         Thread.sleep(2000);
-        driver.findElement(By.name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        driver.findElement(By.xpath("//span[contains(text(),'Save')]")).click();
         Thread.sleep(2000);
+
+        driver.findElement(By.name("search")).sendKeys("Yasar");
+        driver.findElement(By.name("search")).click();
+        Thread.sleep(2000);
+//        driver.findElement(By.xpath("//input[@value='Yasar']")).equals("Yasar");
+        System.out.println("Isminiz Listede Bulunmaktadir");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[normalize-space()='Logoff']")).click();
+
+//input[@name='search']
+
+
+
+
+
+
+
 
 
 
