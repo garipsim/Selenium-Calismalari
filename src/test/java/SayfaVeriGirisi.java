@@ -5,14 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverInfo;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class SayfaVeriGirisi {
 
-    WebDriver driver = new FirefoxDriver();
+    WebDriver driver = new ChromeDriver();
     @Before
     public void control() throws InterruptedException {
         driver.manage().deleteAllCookies();
@@ -25,6 +23,7 @@ public class SayfaVeriGirisi {
 
     @Test
     public void linkTesti() throws InterruptedException {
+
         driver.findElement(By.name("username")).sendKeys("gcreddy");
         Thread.sleep(1000);
         driver.findElement(By.name("password")).sendKeys("Temp@2020");
@@ -41,6 +40,24 @@ public class SayfaVeriGirisi {
         Thread.sleep(1000);
         driver.findElement(By.name("customers_lastname")).sendKeys("Yilmaz");
         Thread.sleep(2000);
+        driver.findElement(By.name("customers_dob")).sendKeys("11/12/1975");
+        Thread.sleep(2000);
+        driver.findElement(By.name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        Thread.sleep(2000);
+        driver.findElement(By.name("entry_company")).sendKeys("yas.yil company");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@name='entry_street_address']")).sendKeys("Sivas");   //name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//input[@name='customers_telephone']")).sendKeys("90980706050");     //name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        Thread.sleep(2000);
+        driver.findElement(By.name("customers_fax")).sendKeys("9080706050");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//select[@name='customers_newsletter']")).click();   //name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        Thread.sleep(2000);
+        driver.findElement(By.name("customers_email_address")).sendKeys("yas.yil@hotmail.com");
+        Thread.sleep(2000);
+
+
 
 
 
