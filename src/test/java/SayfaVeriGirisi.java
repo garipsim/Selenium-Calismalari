@@ -36,6 +36,7 @@ public class SayfaVeriGirisi {
         Thread.sleep(1000);
         driver.findElement(By.id("tdb1")).click();
         Thread.sleep(1000);
+        driver.findElement(By.name("customers_firstname")).clear();
         driver.findElement(By.name("customers_firstname")).sendKeys("Yasar");
         Thread.sleep(1000);
         driver.findElement(By.name("customers_lastname")).sendKeys("Yilmaz");
